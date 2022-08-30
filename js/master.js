@@ -91,3 +91,62 @@ animales.forEach((animale) => {
   };
 });
 // End animales
+
+// start event
+
+setInterval(() => {
+  const difTime = new Date("Dec 31, 2022 23:59:59").getTime() - new Date().getTime();
+  document.querySelector(".event .days span").textContent = Math.floor(difTime / (1000 * 60 * 60 * 24)) < 10 ? `0${Math.floor(difTime / (1000 * 60 * 60 * 24))}` : Math.floor(difTime / (1000 * 60 * 60 * 24));
+  document.querySelector(".event .hours span").textContent = Math.floor((difTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) < 10 ? `0${Math.floor((difTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))}` : Math.floor((difTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  document.querySelector(".event .minutes span").textContent = Math.floor((difTime % (1000 * 60 * 60)) / (1000 * 60)) < 10 ? `0${Math.floor((difTime % (1000 * 60 * 60)) / (1000 * 60))}` : Math.floor((difTime % (1000 * 60 * 60)) / (1000 * 60));
+  document.querySelector(".event .secondes span").textContent = Math.floor((difTime % (1000 * 60)) / 1000) < 10 ? `0${Math.floor((difTime % (1000 * 60)) / 1000)}` : Math.floor((difTime % (1000 * 60)) / 1000);
+}, 1000);
+
+// end event
+
+// start stats
+
+const stats = Array.from(document.querySelectorAll(".stats .box h2"));
+const section = document.querySelector(".stats");
+let done = false;
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= section.offsetTop - 200) {
+    stats.forEach((stat) => {
+      stat.previousElementSibling.style.transform = `translateX(${0}px)`;
+    });
+    if (!done) {
+      stats.forEach((stat) => countIt(stat));
+      done = true;
+    }
+  }
+});
+
+function countIt(target) {
+  const goal = Number(target.dataset.number);
+  const counter = setInterval(() => {
+    target.textContent++;
+    if (target.textContent == goal) {
+      clearInterval(counter);
+    }
+  }, 3000 / goal);
+}
+
+// end stats
+
+// scrool to top
+
+const toTop = document.querySelector(".totop");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 600) {
+    toTop.style.right = "50px";
+  } else {
+    toTop.style.right = "-50px";
+  }
+});
+
+toTop.onclick = () => {
+  scrollTo({
+    top: "0",
+    behavior: "smooth",
+  });
+};
