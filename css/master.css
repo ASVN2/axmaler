@@ -26,10 +26,27 @@ html {
   --main-color: #3584e4;
 }
 .container {
-  width: 1170px;
   margin: auto;
   padding-left: 15px;
   padding-right: 15px;
+}
+/* small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
 }
 
 /* main titile  */
@@ -162,6 +179,7 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 20px 0;
+  align-items: center;
 }
 
 nav .logo {
@@ -182,6 +200,10 @@ nav .logo img {
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+}
+nav .icon-toggle {
+  font-size: 25px;
+  display: none;
 }
 nav .links {
   display: flex;
@@ -427,6 +449,7 @@ nav .links li:hover a {
   -o-border-radius: 5px;
   height: 400px;
   position: relative;
+  width: 280px;
 }
 .shop .box::before {
   content: "Shoes";
@@ -923,8 +946,6 @@ nav .links li:hover a {
   margin-bottom: 15px;
 }
 
-.pricing .box .price {
-}
 .pricing .box .mount {
   font-size: 50px;
 }
@@ -944,9 +965,6 @@ nav .links li:hover a {
 }
 .pricing .box.popular .info {
   color: rgb(235, 235, 235);
-}
-
-.pricing .box .featurs {
 }
 
 .pricing .featurs li {
@@ -1090,29 +1108,14 @@ nav .links li:hover a {
 
 /* start footer */
 
-footer {
-  height: 100vh;
-}
-footer h1 {
-  font-size: 150px;
-  height: 50%;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
 footer .data {
-  height: 50%;
-  /* background-color: rgba(0, 0, 255, 0.18); */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   background-color: rgba(255, 98, 0, 0.169);
+  padding: 25px;
 }
 
 footer .social {
@@ -1149,6 +1152,7 @@ footer .links {
   justify-content: center;
   gap: 20px;
   position: relative;
+  flex-wrap: wrap;
 }
 
 footer .links a {

@@ -138,7 +138,7 @@ function countIt(target) {
 const toTop = document.querySelector(".totop");
 window.addEventListener("scroll", () => {
   if (window.scrollY > 600) {
-    toTop.style.right = "50px";
+    toTop.style.right = "10px";
   } else {
     toTop.style.right = "-50px";
   }
@@ -150,3 +150,26 @@ toTop.onclick = () => {
     behavior: "smooth",
   });
 };
+
+// show the main links when you click
+const iconToggle = document.querySelector(".icon-toggle");
+iconToggle.addEventListener("click", () => {
+  document.querySelector("nav .links").classList.toggle("active");
+  if (iconToggle.classList.contains("fa-bars")) {
+    iconToggle.classList.add("fa-minus");
+    iconToggle.classList.remove("fa-bars");
+  } else {
+    iconToggle.classList.add("fa-bars");
+    iconToggle.classList.remove("fa-minus");
+  }
+});
+
+// first check if the menu opend or not and after click hidden the menu
+
+document.querySelectorAll("nav .links li").forEach((li) => {
+  li.addEventListener("click", () => {
+    document.querySelector("nav .links").classList.remove("active");
+    iconToggle.classList.add("fa-bars");
+    iconToggle.classList.remove("fa-minus");
+  });
+});

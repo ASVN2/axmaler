@@ -1,0 +1,137 @@
+@media (max-width: 970px) {
+  nav .icon-toggle {
+    font-size: 22px;
+    display: block;
+    cursor: pointer;
+    z-index: 6;
+    background: var(--main-color);
+    padding: 10px;
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  nav .links {
+    display: block;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    position: absolute;
+    right: -1000px;
+    top: 0;
+    z-index: 4;
+    background: #eee;
+    padding: 20px;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 100px 20px;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition-timing-function: cubic-bezier(0.46, -0.51, 0.65, 1.07);
+    z-index: 5;
+    justify-content: center;
+  }
+  nav .links li {
+    display: block;
+    padding: 10px 5px;
+  }
+  nav .links.active {
+    right: 0;
+  }
+  .landing .container,
+  .landing .images {
+    flex-direction: column;
+  }
+  .landing .box {
+    width: 350px;
+    height: 100px;
+  }
+  .landing .box.active {
+    height: 350px;
+    width: 350px;
+  }
+  .prodacts {
+    padding-top: 600px;
+  }
+  .shop .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .shop .box {
+    width: fit-content;
+    margin: auto;
+  }
+  .skills .container {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+  .skills .image-contaner::before {
+    width: 250px;
+    height: 250px;
+  }
+  .skills .box .bar {
+    width: 250px;
+  }
+  .skills .box {
+    padding: 5px 10px;
+    border: 2px solid black;
+  }
+  .skills .box .title {
+    width: 30px;
+    font-size: 15px;
+  }
+  .animales .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .animales .main-image {
+    width: 300px;
+    height: 300px;
+  }
+  .animales .main-image img {
+    width: 500px;
+  }
+  .animales .holder-images ul {
+    padding: 0 110px;
+  }
+  .animales .holder-images li {
+    width: 100px;
+    height: 100px;
+  }
+  .event .times {
+    flex-wrap: wrap;
+  }
+  .stats .stats-contant {
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .pricing .box {
+    margin: 0 15px;
+  }
+  .contact .container {
+    flex-direction: column;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact .input-contant {
+    text-align: center;
+  }
+  .contact .info-contant {
+    padding: 0 15px;
+  }
+}
